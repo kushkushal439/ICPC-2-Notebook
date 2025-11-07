@@ -1,12 +1,13 @@
 // Flow algorithm with complexity $O(VE\log U)$ where $U = \max |\text{cap}|$.
-// $O(\min(E^{1/2}, V^{2/3})E)$ if $U = 1$; $O(\sqrt{V}E)$ for bipartite matching.
+// $O(\min(E^{1/2}, V^{2/3})E)$ if $U = 1$; $O(\sqrt{V}E)$ for bipartite
+// matching.
 using ll = long long;
 #define rep(i, j, k) for (int i = j; i < k; i++)
 struct Dinic {
   struct Edge {
     int to, rev;
     ll c, oc;
-    ll flow() { return max(oc - c, 0LL); }  // if you need flows
+    ll flow() { return max(oc - c, 0LL); } // if you need flows
   };
   vi lvl, ptr, q;
   vector<vector<Edge>> adj;
@@ -16,9 +17,10 @@ struct Dinic {
     adj[b].push_back({a, sz(adj[a]) - 1, rcap, rcap});
   }
   ll dfs(int v, int t, ll f) {
-    if (v == t || !f) return f;
-    for (int& i = ptr[v]; i < sz(adj[v]); i++) {
-      Edge& e = adj[v][i];
+    if (v == t || !f)
+      return f;
+    for (int &i = ptr[v]; i < sz(adj[v]); i++) {
+      Edge &e = adj[v][i];
       if (lvl[e.to] == lvl[v] + 1)
         if (ll p = dfs(e.to, t, min(f, e.c))) {
           e.c -= p, adj[e.to][e.rev].c += p;
@@ -30,7 +32,7 @@ struct Dinic {
   ll calc(int s, int t) {
     ll flow = 0;
     q[0] = s;
-    rep(L, 0, 31) do {  // 'int L=30' maybe faster for random data
+    rep(L, 0, 31) do { // 'int L=30' maybe faster for random data
       lvl = ptr = vi(sz(q));
       int qi = 0, qe = lvl[s] = 1;
       while (qi < qe && !lvl[t]) {
@@ -39,7 +41,8 @@ struct Dinic {
           if (!lvl[e.to] && e.c >> (30 - L))
             q[qe++] = e.to, lvl[e.to] = lvl[v] + 1;
       }
-      while (ll p = dfs(s, t, LLONG_MAX)) flow += p;
+      while (ll p = dfs(s, t, LLONG_MAX))
+        flow += p;
     }
     while (lvl[t])
       ;

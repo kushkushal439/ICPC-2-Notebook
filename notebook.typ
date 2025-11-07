@@ -45,6 +45,9 @@
 #heading(outlined: true, level: 1)[Strings]
 #include "content/string/chapter.typ"
 
+#heading(outlined: true, level: 1)[Additional]
+#include "content/additional/chapter.typ"
+
 // Add bitwise stuff here
 
 // Numerical section not present in `content/` — commented out to avoid include error.

@@ -1,5 +1,4 @@
-template <const int MAX_N, typename flow_t,
-          typename cost_t, flow_t FLOW_INF,
+template <const int MAX_N, typename flow_t, typename cost_t, flow_t FLOW_INF,
           cost_t COST_INF, const int SCALE = 16>
 struct CostScalingMCMF {
 #define sz(a) a.size()
@@ -19,11 +18,13 @@ struct CostScalingMCMF {
   CostScalingMCMF() { negativeSelfLoop = 0; }
   void clear() {
     negativeSelfLoop = 0;
-    for (int i = 0; i < MAX_N; i++) g[i].clear();
+    for (int i = 0; i < MAX_N; i++)
+      g[i].clear();
   }
   void addEdge(int s, int e, flow_t cap, cost_t cost) {
     if (s == e) {
-      if (cost < 0) negativeSelfLoop += cap * cost;
+      if (cost < 0)
+        negativeSelfLoop += cap * cost;
       return;
     }
     g[s].push_back(Edge(e, cap, cost, sz(g[e])));
@@ -38,15 +39,18 @@ struct CostScalingMCMF {
       for (q.push(S); !q.empty(); q.pop()) {
         int v = q.front();
         for (const auto &e : g[v])
-          if (!level[e.v] && e.c) q.push(e.v), level[e.v] = level[v] + 1;
+          if (!level[e.v] && e.c)
+            q.push(e.v), level[e.v] = level[v] + 1;
       }
       return level[T];
     };
     function<flow_t(int, flow_t)> DFS = [&](int v, flow_t fl) {
-      if (v == T || fl == 0) return fl;
+      if (v == T || fl == 0)
+        return fl;
       for (int &i = ptr[v]; i < (int)g[v].size(); i++) {
         Edge &e = g[v][i];
-        if (level[e.v] != level[v] + 1 || !e.c) continue;
+        if (level[e.v] != level[v] + 1 || !e.c)
+          continue;
         flow_t delta = DFS(e.v, min(fl, e.c));
         if (delta) {
           e.c -= delta;
@@ -59,7 +63,8 @@ struct CostScalingMCMF {
     flow_t maxFlow = 0, tmp = 0;
     while (BFS()) {
       zero_stl(ptr, V);
-      while ((tmp = DFS(S, FLOW_INF))) maxFlow += tmp;
+      while ((tmp = DFS(S, FLOW_INF)))
+        maxFlow += tmp;
     }
     return maxFlow;
   }
@@ -67,21 +72,26 @@ struct CostScalingMCMF {
     flow_t maxFlow = 0;
     cost_t eps = 0, minCost = 0;
     stack<int, vector<int>> stk;
-    auto c_pi = [&](int v, const Edge &edge) { return edge.d + pi[v] - pi[edge.v]; };
+    auto c_pi = [&](int v, const Edge &edge) {
+      return edge.d + pi[v] - pi[edge.v];
+    };
     auto push = [&](int v, Edge &edge, flow_t delta, bool flag) {
       delta = min(delta, edge.c);
       edge.c -= delta;
       g[edge.v][edge.r].c += delta;
       excess[v] -= delta;
       excess[edge.v] += delta;
-      if (flag && 0 < excess[edge.v] && excess[edge.v] <= delta) stk.push(edge.v);
+      if (flag && 0 < excess[edge.v] && excess[edge.v] <= delta)
+        stk.push(edge.v);
     };
     auto relabel = [&](int v, cost_t delta) { pi[v] -= delta + eps; };
     auto lookAhead = [&](int v) {
-      if (excess[v]) return false;
+      if (excess[v])
+        return false;
       cost_t delta = COST_INF;
       for (auto &e : g[v]) {
-        if (e.c <= 0) continue;
+        if (e.c <= 0)
+          continue;
         cost_t cp = c_pi(v, e);
         if (cp < 0)
           return false;
@@ -95,7 +105,8 @@ struct CostScalingMCMF {
       cost_t delta = COST_INF;
       for (int i = 0; i < sz(g[v]); i++) {
         Edge &e = g[v][i];
-        if (e.c <= 0) continue;
+        if (e.c <= 0)
+          continue;
         cost_t cp = c_pi(v, e);
         if (cp < 0) {
           if (lookAhead(e.v)) {
@@ -103,7 +114,8 @@ struct CostScalingMCMF {
             continue;
           }
           push(v, e, excess[v], true);
-          if (excess[v] == 0) return;
+          if (excess[v] == 0)
+            return;
         } else
           delta = min(delta, cp);
       }
@@ -113,17 +125,21 @@ struct CostScalingMCMF {
     zero_stl(pi, N);
     zero_stl(excess, N);
     for (int i = 0; i < N; i++)
-      for (auto &e : g[i]) minCost += e.c * e.d, e.d *= MAX_N + 1, eps = max(eps, e.d);
+      for (auto &e : g[i])
+        minCost += e.c * e.d, e.d *= MAX_N + 1, eps = max(eps, e.d);
     maxFlow = getMaxFlow(N, S, T);
     while (eps > 1) {
       eps /= SCALE;
-      if (eps < 1) eps = 1;
+      if (eps < 1)
+        eps = 1;
       stk = stack<int, vector<int>>();
       for (int v = 0; v < N; v++)
         for (auto &e : g[v])
-          if (c_pi(v, e) < 0 && e.c > 0) push(v, e, e.c, false);
+          if (c_pi(v, e) < 0 && e.c > 0)
+            push(v, e, e.c, false);
       for (int v = 0; v < N; v++)
-        if (excess[v] > 0) stk.push(v);
+        if (excess[v] > 0)
+          stk.push(v);
       while (stk.size()) {
         int top = stk.top();
         stk.pop();
@@ -131,7 +147,8 @@ struct CostScalingMCMF {
       }
     }
     for (int v = 0; v < N; v++)
-      for (auto &e : g[v]) e.d /= MAX_N + 1, minCost -= e.c * e.d;
+      for (auto &e : g[v])
+        e.d /= MAX_N + 1, minCost -= e.c * e.d;
     minCost = minCost / 2 + negativeSelfLoop;
     return {maxFlow, minCost};
   }

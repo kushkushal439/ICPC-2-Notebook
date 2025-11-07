@@ -13,11 +13,11 @@ if exists: ts.values[i] contains the assignments
 struct TwoSat {
   int N;
   vector<vi> gr;
-  vi values;  // 0 = false, 1 = true
+  vi values; // 0 = false, 1 = true
 
   TwoSat(int n = 0) : N(n), gr(2 * n) {}
 
-  int addVar() {  // (optional)
+  int addVar() { // (optional)
     gr.emplace_back();
     gr.emplace_back();
     return N++;
@@ -31,8 +31,9 @@ struct TwoSat {
   }
   void setValue(int x) { either(x, x); }
 
-  void atMostOne(const vi& li) {  // (optional)
-    if (sz(li) <= 1) return;
+  void atMostOne(const vi &li) { // (optional)
+    if (sz(li) <= 1)
+      return;
     int cur = ~li[0];
     for (int i = 2; i < sz(li); i++) {
       int next = addVar();
@@ -52,7 +53,8 @@ struct TwoSat {
     for (int e : gr[i])
       if (!comp[e])
         low = min(low, val[e] ?: dfs(e));
-    if (low == val[i]) do {
+    if (low == val[i])
+      do {
         x = z.back();
         z.pop_back();
         comp[x] = low;
@@ -67,9 +69,11 @@ struct TwoSat {
     val.assign(2 * N, 0);
     comp = val;
     for (int i = 0; i < 2 * N; i++)
-      if (!comp[i]) dfs(i);
+      if (!comp[i])
+        dfs(i);
     for (int i = 0; i < N; i++)
-      if (comp[2 * i] == comp[2 * i + 1]) return 0;
+      if (comp[2 * i] == comp[2 * i + 1])
+        return 0;
     return 1;
   }
 };

@@ -2,7 +2,7 @@ struct SCC {
   int n;
   vi val, cc, z;
   vvi comps;
-  SCC(vvi& adj) : n(sz(adj)), val(n), cc(n, -1) {
+  SCC(vvi &adj) : n(sz(adj)), val(n), cc(n, -1) {
     int timer = 0;
     function<int(int)> dfs = [&](int x) {
       int low = val[x] = ++timer, b;
@@ -23,7 +23,8 @@ struct SCC {
       return val[x] = low;
     };
     for (int i = 0; i < n; i++)
-      if (cc[i] < 0) dfs(i);
+      if (cc[i] < 0)
+        dfs(i);
   }
   int operator[](int i) { return cc[i]; }
   int size(int i) { return sz(comps[cc[i]]); }
