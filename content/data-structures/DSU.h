@@ -1,3 +1,7 @@
+/**
+ * Author: Anonymous
+ * Description: DSU
+ */
 struct DSU {
   int n;
   vi parent;

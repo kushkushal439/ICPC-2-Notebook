@@ -1,3 +1,7 @@
+/**
+ * Author: Anonymous
+ * Description: HLD
+ */
 struct HLD {
   int n, timer = 0;
   vi top, tin, p, sub;

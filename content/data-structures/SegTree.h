@@ -1,3 +1,7 @@
+/**
+ * Author: Anonymous
+ * Description: SegTree
+ */
 struct segtree {
   typedef int T;
   // for max segtree, set unit = INT_MIN and f(a,b) = max(a,b)

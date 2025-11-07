@@ -1,3 +1,7 @@
+/**
+ * Author: Anonymous
+ * Description: Trie
+ */
 class TrieNode {
 public:
   unordered_map<char, TrieNode *> children;

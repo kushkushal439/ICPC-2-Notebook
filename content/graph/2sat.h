@@ -1,3 +1,7 @@
+/**
+ * Author: Anonymous
+ * Description: 2sat
+ */
 /*
 ts.either(x, y);
 ts.either(~x, ~y); these two do x xor y

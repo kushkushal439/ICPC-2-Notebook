@@ -1,3 +1,7 @@
+/**
+ * Author: Anonymous
+ * Description: Manacher
+ */
 /* Description: p[0][i] = half length of longest even palindrome behind pos i,
 p[1][i] = longest odd with center at pos i(half rounded down). */
 array<vi, 2> manacher(const string& s) {

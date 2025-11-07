@@ -1,3 +1,7 @@
+/**
+ * Author: Anonymous
+ * Description: SuffixArray
+ */
 /*Builds suffix array for a string.
 \texttt{sa[i]} is the starting index of the suffix which
 is $i$'th in the sorted suffix array.

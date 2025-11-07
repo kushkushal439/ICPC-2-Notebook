@@ -1,3 +1,7 @@
+/**
+ * Author: Anonymous
+ * Description: ModularArithmetic
+ */
 int add(int x, int y, int m = M) {
   int ret = (x + y) % m;
   if (ret < 0)

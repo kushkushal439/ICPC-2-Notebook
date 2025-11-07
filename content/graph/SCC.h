@@ -1,3 +1,7 @@
+/**
+ * Author: Anonymous
+ * Description: SCC
+ */
 struct SCC {
   int n;
   vi val, cc, z;

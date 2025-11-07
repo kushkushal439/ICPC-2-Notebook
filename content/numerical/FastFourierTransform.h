@@ -1,3 +1,7 @@
+/**
+ * Author: Anonymous
+ * Description: FastFourierTransform
+ */
 typedef complex<double> C;
 typedef vector<double> vd;
 

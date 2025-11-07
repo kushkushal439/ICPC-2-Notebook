@@ -1,3 +1,7 @@
+/**
+ * Author: Anonymous
+ * Description: Mos
+ */
 int BLOCK = DO_NOT_FORGET_TO_CHANGE_THIS;
 struct Query {
   int l, r, id;

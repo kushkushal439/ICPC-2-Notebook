@@ -1,3 +1,7 @@
+/**
+ * Author: Anonymous
+ * Description: MinCostMaxFlow
+ */
 template <const int MAX_N, typename flow_t,
           typename cost_t, flow_t FLOW_INF,
           cost_t COST_INF, const int SCALE = 16>

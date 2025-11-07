@@ -1,3 +1,7 @@
+/**
+ * Author: Anonymous
+ * Description: MatrixExpo
+ */
 int **matrixmul(int **matrix1, int **matrix2) {
   int **matrix3 = new int *[2];
   for (int i = 0; i < 2; i++)

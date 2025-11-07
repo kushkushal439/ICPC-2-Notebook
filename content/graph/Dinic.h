@@ -1,3 +1,7 @@
+/**
+ * Author: Anonymous
+ * Description: Dinic
+ */
 // Flow algorithm with complexity $O(VE\log U)$ where $U = \max |\text{cap}|$.
 // $O(\min(E^{1/2}, V^{2/3})E)$ if $U = 1$; $O(\sqrt{V}E)$ for bipartite matching.
 using ll = long long;

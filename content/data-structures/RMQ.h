@@ -1,3 +1,7 @@
+/**
+ * Author: Anonymous
+ * Description: RMQ
+ */
 template <class T>
 struct RMQ {
   vector<vector<T>> jmp;

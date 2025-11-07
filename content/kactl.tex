@@ -1,0 +1,26 @@
+\documentclass[9pt, a4paper, notitlepage]{extreport}
+\usepackage{kactlpkg}
+\kactlcontentdir{content}
+
+\university{IIIT-H}{IIIT Hyderabad}{iiith}
+\team{ICPC**2}{Arya Mahendraker, Kushal Balabhadruni, Sriteja Pashya}
+\contest{\ }{\today}
+\enablecolors
+
+\begin{document}
+	\maketeampage
+	\begin{multicols*}{2}
+	\thispagestyle{fancy}
+	% Table of contents, without subsections:
+	\setcounter{tocdepth}{0}
+	\tableofcontents
+
+	\kactlchapter{contest}
+	\kactlchapter{data-structures}
+	\kactlchapter{graph}
+	\kactlchapter{number-theory}
+	\kactlchapter{numerical}
+	\kactlchapter{string}
+	\kactlchapter{geometry}
+	\end{multicols*}
+\end{document}

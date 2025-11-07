@@ -1,3 +1,7 @@
+/**
+ * Author: Anonymous
+ * Description: BitBNS
+ */
 // --- Bit Binary Search in o(log(n)) ---
 const int M = 20 const int N = 1 << M
 

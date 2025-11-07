@@ -1,3 +1,7 @@
+/**
+ * Author: Anonymous
+ * Description: bellman
+ */
 bool bellman_ford(int n, int src, vector<vector<pair<int, int>>> &adj,
                   vector<long long> &dist) {
   const long long INF = 1e18;

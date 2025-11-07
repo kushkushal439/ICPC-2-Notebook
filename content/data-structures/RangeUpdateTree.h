@@ -1,3 +1,9 @@
+/**
+ * Author: Unknown
+ * Description: Range update tree for range updates and point queries
+ * Time: O(\log N)
+ * Status: tested
+ */
 template <typename T, typename F> struct RangeUpdateTree {
   int n;
   vector<T> tree;

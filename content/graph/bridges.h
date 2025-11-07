@@ -1,3 +1,7 @@
+/**
+ * Author: Anonymous
+ * Description: bridges
+ */
 int n;                   // number of nodes
 vector<vector<int>> adj; // adjacency list of graph
 

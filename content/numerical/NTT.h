@@ -1,3 +1,7 @@
+/**
+ * Author: Anonymous
+ * Description: NTT
+ */
 /* Description: Can be used for convolutions modulo specific nice primes of the form 2^a b+1, where the convolution result has size at most 2^a
  * (125000001 << 3) + 1 = 1e9 + 7, therefore do not use this for M = 1e9 + 7.
  * For $p < 2^30$ there is also e.g. (5 << 25, 3), (7 << 26, 3),
