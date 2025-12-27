@@ -47,4 +47,13 @@ struct HLD {
     if (sub[v] > 1 or !ignore_lca)
       op(tin[v] + ignore_lca, tin[v] + sub[v] - 1);
   }
+
+  template <class B>
+  void go_up(int node, int anc, B op) {
+      while(top[node] != top[anc]) {
+          op(tin[top[node]], tin[node]);
+          node = p[top[node]];
+      }
+      op(tin[anc], tin[node]);
+  }
 };
