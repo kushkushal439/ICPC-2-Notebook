@@ -24,4 +24,21 @@ for ((t=1; ; t++)); do
         break
     fi
 done
+
+also for times, use this:
+#ifndef ONLINE_JUDGE
+clock_t tStart = clock();
+#endif
+
+void runtime() {
+#ifndef ONLINE_JUDGE
+    double elapsed =
+        (double)(clock() - tStart) / CLOCKS_PER_SEC;
+
+    fprintf(stderr,
+            ">> Runtime: %.10fs\n",
+            elapsed);
+#endif
+}
+    
 */

@@ -27,7 +27,7 @@ int pw(int a, int b, int m = M) {
 }
 
 #define LL int
-const long long mod = 1e9 + 7;
+const long long mod = M;
 
 int euclid(int a, int b, int &x, int &y) {
   if (!b)
@@ -110,4 +110,17 @@ int BinExpItermod(int a, int b) {
     b = b >> 1;
   }
   return ans;
+}
+
+int gcd(int a, int b) {
+    if (a == 0)
+        return b;
+    return gcd(b % a, a);
+}
+
+int lcm(int a, int b) {
+    int gc = gcd(a, b);
+    int ans = a * b;
+    ans /= gc;
+    return ans;
 }
