@@ -5,7 +5,7 @@
 */
 // We are given an array a1,a2,a3...an and an integer q.
 // The i_th of the next q lines has three integers li,ri,xi.
-// The answer for this query is how many aj such that li ≤ j ≤ ri and aj<x.
+// The answer for this query is how many aj such that li <= j <= ri and aj < x.
 #include <bits/stdc++.h>
 using namespace std;
 const int N=1e5+5;
