@@ -123,9 +123,9 @@
 
 	\parindent \z@ \raggedright \normalfont
 		\interlinepenalty\@M
-	{\underline{\huge \bfseries #1} }
+	{\underline{\fontsize{14pt}{16pt}\selectfont \bfseries #1} }
 	\ifnum \c@secnumdepth >\m@ne
-		{\huge\bfseries (\thechapter) \par\nobreak }
+		{\fontsize{14pt}{16pt}\selectfont\bfseries (\thechapter) \par\nobreak }
 	\fi
 	\startcontents[chapters]
 }
@@ -133,17 +133,17 @@
 \renewcommand\section{\@startsection {section}{1}{\z@}%
                                    {-0.5ex \@plus -1ex \@minus -.2ex}%
                                    {.4ex}%
-                                   {\normalfont\LARGE\bfseries}}
+                                   {\normalfont\fontsize{14pt}{16pt}\selectfont\bfseries}}
 
 \renewcommand\subsection{\@startsection{subsection}{2}{\z@}
 	{1ex\@plus -1ex \@minus -.3ex}
 	{.2ex}
-	{\normalfont\large\bfseries}}
+	{\normalfont\fontsize{14pt}{16pt}\selectfont\bfseries}}
 
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}
 	{1ex\@plus -1ex \@minus -.3ex}
 	{1ex \@plus .2ex}
-	{\normalfont\large\bfseries}}
+	{\normalfont\fontsize{14pt}{16pt}\selectfont\bfseries}}
 
 % Styles for local toc
 \titlecontents{localsection}[1.5em]{\small}{}
