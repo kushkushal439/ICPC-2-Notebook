@@ -1,3 +1,8 @@
+/**
+ * Author: Anonymous
+ * Description: LazySegTree
+ */
+
 // Set BLOCK_SIZE to N^(2/3) for Mo's with updates
 int BLOCK_SIZE = CHANGE; 
 
