@@ -1,6 +1,5 @@
 /**
  * Author: Anonymous
- * Description: template
  */
 #include <bits/stdc++.h>
 
@@ -28,24 +27,5 @@ typedef tree<int, null_type, less<int>, rb_tree_tag,
 #endif
 
 #define int long long
-#define fast()                                                                 \
-  ios_base::sync_with_stdio(0);                                                \
-  cin.tie(NULL);                                                               \
-  cout.tie(NULL);
-#define fr(i, a, b) for (int i = (a); i < (int)(b); ++i)
-#define pb push_back
+#define fast() ios_base::sync_with_stdio(0); cin.tie(NULL);                                                               \
 #define prDouble(x) cout << fixed << setprecision(10) << x
-int M = 1e9 + 7;
-#define all(x) x.begin(), x.end()
-#define allr(x) x.rbegin(), x.rend()
-#define sz(x) (int)x.size()
-void solve() {}
-signed main() {
-  fast();
-  int t = 1;
-  cin >> t;
-  while (t--) {
-    solve();
-  }
-  return 0;
-}
