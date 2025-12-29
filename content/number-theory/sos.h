@@ -1,6 +1,5 @@
 /**
  * Author: Anonymous
- * Description: sos dp
  */
 vector<int> sos_dp(const vector<int>& A) {
     int n = __builtin_ctz(A.size());

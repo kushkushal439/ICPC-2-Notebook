@@ -1,6 +1,5 @@
 /**
  * Author: Anonymous
- * Description: RMQ
  */
 template <class T>
 struct RMQ {

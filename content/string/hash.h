@@ -1,6 +1,5 @@
 /**
  * Author: Anonymous
- * Description: hash
  */
 template <int MOD, int P> struct RH {
   // using H1 = RH<1000000007, 91138233>;

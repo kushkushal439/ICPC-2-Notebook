@@ -1,6 +1,5 @@
 /**
  * Author: Anonymous
- * Description: MillerRabin
  */
 u64 mult(u64 a, u64 b, u64 m = M) {
   i64 ret = a * b - m * (u64)(1.L / m * a * b);

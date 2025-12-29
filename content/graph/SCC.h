@@ -1,6 +1,5 @@
 /**
  * Author: Anonymous
- * Description: SCC
  */
 struct SCC {
   int n;

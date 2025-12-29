@@ -1,6 +1,5 @@
 /**
  * Author: Anonymous
- * Description: spf
  */
 int MX = 1e7 + 1;
 vi spf(MX + 1, INT32_MAX);

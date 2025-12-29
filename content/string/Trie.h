@@ -1,6 +1,5 @@
 /**
  * Author: Anonymous
- * Description: Trie
  */
 // for bits
 struct trieobject {

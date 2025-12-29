@@ -1,7 +1,5 @@
 /**
  * Author: Anonymous
- * Description:
- * Merge sort tree 1, for Static Count of Lesser Elements range queries.
 */
 // We are given an array a1,a2,a3...an and an integer q.
 // The i_th of the next q lines has three integers li,ri,xi.

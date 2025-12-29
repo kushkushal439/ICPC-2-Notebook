@@ -1,6 +1,5 @@
 /**
  * Author: Anonymous
- * Description: SegTree
  */
 struct segtree {
   typedef int T;

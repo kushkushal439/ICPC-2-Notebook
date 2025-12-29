@@ -1,6 +1,5 @@
 /**
  * Author: Anonymous
- * Description: LCA
  */
 // O(1) LCA
 struct LCA {

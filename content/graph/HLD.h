@@ -1,6 +1,5 @@
 /**
  * Author: Anonymous
- * Description: HLD
  */
 struct HLD {
   int n, timer = 0;

@@ -1,6 +1,5 @@
 /**
  * Author: Anonymous
- * Description: 2sat
  */
 /*
 ts.either(x, y);

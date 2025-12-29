@@ -1,6 +1,5 @@
 /**
  * Author: Anonymous
- * Description: LazySegTree
  */
 template <typename T, typename F>
 struct SegTree {

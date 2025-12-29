@@ -1,6 +1,5 @@
 /**
 * Author: Anonymous
-* Description: dnc dp with cost func
 */
 auto add = [&](int v) {
     cnt[a[v]]++;

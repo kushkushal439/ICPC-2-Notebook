@@ -1,6 +1,5 @@
 /**
  * Author: Anonymous
- * Description: KthAnc
  */
 // O(log n) LCA with Kth anc
 struct LCA {

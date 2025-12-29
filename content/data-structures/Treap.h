@@ -1,6 +1,5 @@
 /**
  * Author: Anonymous
- * Description: Treap
  */
 /*A short self-balancing tree. It acts as a
 sequential container with log-time splits/joins, and
