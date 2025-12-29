@@ -4,7 +4,6 @@
  * Description:
  */
 #pragma once
-
 struct Poly {
 	vector<double> a;
 	double operator()(double x) const {
