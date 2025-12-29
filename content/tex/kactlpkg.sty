@@ -5,7 +5,7 @@
 \usepackage[utf8]{inputenc}             % Encoding UTF-8
 \usepackage{listings}                   % Source code listings
 \usepackage{framed}                     % Source code listings
-\usepackage[a4paper,landscape,margin=2.5cm]{geometry}
+\usepackage[a4paper,landscape,margin=2.3cm]{geometry}
 \usepackage{multicol}                   % Split page in multiple columns
 \usepackage{fancyhdr}                   % Fancy headers
 \usepackage{amsbsy, amssymb, amsmath}   % Enable math symbols
@@ -22,6 +22,9 @@
 \usepackage[normalem]{ulem}
 \usepackage[hidelinks]{hyperref}        % For clickable table of contents
 \usepackage{mathptmx}                   % Times New Roman font
+
+% Set exact font size (12pt with 12pt line spacing)
+\AtBeginDocument{\fontsize{12pt}{12pt}\selectfont}
 
 % Config commands
 \newcommand{\subtitle}[1]{
@@ -42,7 +45,7 @@
 }
 
 \newcommand{\enablecolors}{
-	\lstset{basicstyle=\footnotesize\ttfamily\color{mygreen}}
+	\lstset{basicstyle=\normalsize\ttfamily\color{mygreen}}
 	\lstset{commentstyle=\color{darkgray}\normalfont\itshape}
 	\lstset{keywordstyle=\color{myblue}}
 	\lstset{identifierstyle=\color{black}}
@@ -201,7 +204,7 @@
 \lstset{tabsize=2}
 \lstset{showstringspaces=false}
 \lstset{breaklines=true}
-\lstset{basicstyle=\footnotesize\ttfamily}
+\lstset{basicstyle=\normalsize\ttfamily}
 \lstset{commentstyle=\normalfont\itshape}
 \lstset{literate={^}{\caret}{1} {~}{\tilde}{1} {\{}{\nicelbrace}{1} {\}}{\nicerbrace}{1}}
 \lstset{emptylines=*1}
@@ -269,7 +272,7 @@
 	\setboolean{hasleftcaption}{false}
 	\myneedspace{3\baselineskip}
 	\penalty-100
-	{\large #2}
+	{\large \textbf{#2}}
 	\immediate\write18{rm -f \@builddir/kactl.tmp} % Don't include old kactl.tmp on failure.
 	\immediate\write18{python3 content/tex/preprocessor.py -i "\@kactldir/#2" -o \@builddir/kactl.tmp #1}
 	\immediate\input{\@builddir/kactl.tmp}
