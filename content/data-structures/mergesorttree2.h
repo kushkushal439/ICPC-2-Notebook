@@ -2,9 +2,9 @@
  * Author: Anonymous
  * Description:
  * Merge sort tree 2, for Dynamic Lower Bound problem.
- * given array and updates,
- * should find lower bound of x in range l to r.
 */
+//given array and updates,
+//should find lower bound of x in range l to r.
 
 #include <bits/stdc++.h>
 using namespace std;
