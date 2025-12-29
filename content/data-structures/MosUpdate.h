@@ -1,6 +1,6 @@
 /**
  * Author: Anonymous
- * Description: LazySegTree
+ * Description: Mos with Updates
  */
 
 // Set BLOCK_SIZE to N^(2/3) for Mo's with updates
