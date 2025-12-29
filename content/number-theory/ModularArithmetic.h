@@ -111,16 +111,3 @@ int BinExpItermod(int a, int b) {
   }
   return ans;
 }
-
-int gcd(int a, int b) {
-    if (a == 0)
-        return b;
-    return gcd(b % a, a);
-}
-
-int lcm(int a, int b) {
-    int gc = gcd(a, b);
-    int ans = a * b;
-    ans /= gc;
-    return ans;
-}
