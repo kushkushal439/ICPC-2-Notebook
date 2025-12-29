@@ -1,26 +1,10 @@
-/**
- * Author: Kushal
- * Description: run stress test
- */
 /*
-1. Make in directory
-
 #!/bin/bash
-
-g++ gen.cpp -o gen -O2
-g++ brute.cpp -o brute -O2
-g++ sol.cpp -o sol -O2
-
 for ((t=1; ; t++)); do
     echo "Test $t"
-    ./gen 500 > in/in${t}.txt
-    # cat in/in${t}.txt
-
+    ./gen 50 > in/in${t}.txt
     ./brute < in/in${t}.txt > out1.txt
     ./sol < in/in${t}.txt > out2.txt
-
-    # diff out1.txt out2.txt
-
     if ! diff -q out1.txt out2.txt >/dev/null; then
         echo "Mismatch found on test $t!"
         cat in/in${t}.txt
@@ -28,21 +12,18 @@ for ((t=1; ; t++)); do
         break
     fi
 done
+# also for times, use this:
+# #ifndef ONLINE_JUDGE
+# clock_t tStart = clock();
+# #endif
+# void runtime() {
+# #ifndef ONLINE_JUDGE
+#     double elapsed =
+#         (double)(clock() - tStart) / CLOCKS_PER_SEC;
 
-also for times, use this:
-#ifndef ONLINE_JUDGE
-clock_t tStart = clock();
-#endif
-
-void runtime() {
-#ifndef ONLINE_JUDGE
-    double elapsed =
-        (double)(clock() - tStart) / CLOCKS_PER_SEC;
-
-    fprintf(stderr,
-            ">> Runtime: %.10fs\n",
-            elapsed);
-#endif
-}
-    
+#     fprintf(stderr,
+#             ">> Runtime: %.10fs\n",
+#             elapsed);
+# #endif
+# }
 */
