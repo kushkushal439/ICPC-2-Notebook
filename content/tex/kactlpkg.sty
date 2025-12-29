@@ -80,7 +80,7 @@
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0pt}
 \headheight 25pt
-\lhead{\@unishort}
+\lhead{\@unishort{} -- \@teamname}
 \chead{\immediate\write18{python3 content/tex/preprocessor.py --print-header "\splitbotmarks\hdrmark|\botmarks\hdrmark" -o \@builddir/header2.tmp}\immediate\input{\@builddir/header2.tmp}}
 \rhead{\thepage}
 %\lhead{}\chead{\thepage}\rhead{}
@@ -152,11 +152,12 @@
 
 % Styles for main toc
 \renewcommand{\chaptermark}[1]{\markboth{\emph{ #1}}{}}
-\renewcommand{\cftbeforetoctitleskip}{-45pt}
+\renewcommand{\cftbeforetoctitleskip}{0pt}
 \renewcommand{\cftaftertoctitleskip}{10pt}
 \renewcommand{\cftbeforechapskip}{11pt}
 \renewcommand\cftchapfont{\large\bfseries}
 \renewcommand{\cftdotsep}{4.5}
+\tocloftpagestyle{fancy}
 
 % Proper carets and tildes
 \newcommand*{\caret}{%
